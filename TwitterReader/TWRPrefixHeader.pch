@@ -1,0 +1,25 @@
+//
+//  main.pch
+//  TwitterReader
+//
+//  Created by Ruslan Gumennyi on 12/12/14.
+//  Copyright (c) 2014 e-legion. All rights reserved.
+//
+
+#ifndef TwitterReader_main_pch
+#define TwitterReader_main_pch
+
+#define Weakify(obj) __weak typeof(self) _weakSelf = self;
+#define Strongify(obj) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+__strong typeof(_weakSelf) self = _weakSelf; \
+_Pragma("clang diagnostic pop")
+
+#import <objc/runtime.h>
+
+#import "UIImageView+Utils.h"
+#import "NSString+Utils.h"
+#import "NSObject+Utils.h"
+
+#endif
